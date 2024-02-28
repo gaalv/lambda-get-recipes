@@ -22,4 +22,4 @@ functions:
     events:
       - httpApi:
           path: /recipes
-          method: GET
+          method: POST

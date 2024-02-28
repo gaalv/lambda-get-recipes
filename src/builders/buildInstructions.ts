@@ -1,6 +1,10 @@
 import { Worksheet } from "exceljs";
+import { PreparationStep } from "../types";
 
-export function buildInstructions(sheet: Worksheet, instructions: any[]) {
+export function buildInstructions(
+  sheet: Worksheet,
+  instructions: PreparationStep[]
+) {
   sheet.addRow(["Modo de preparo"]);
   const instructionsRow = sheet.lastRow;
   sheet.mergeCells(`A${instructionsRow?.number}:F${instructionsRow?.number}`);

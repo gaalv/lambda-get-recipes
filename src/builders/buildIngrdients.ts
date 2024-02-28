@@ -1,6 +1,10 @@
 import { Worksheet } from "exceljs";
+import { RecipeIngredient } from "../types";
 
-export function buildIngredients(sheet: Worksheet, ingredients: any[]) {
+export function buildIngredients(
+  sheet: Worksheet,
+  ingredients: RecipeIngredient[]
+) {
   sheet.mergeCells("A5:C5");
   const ingredientsCell = sheet.getCell("A5");
   ingredientsCell.fill = {
@@ -37,7 +41,7 @@ export function buildIngredients(sheet: Worksheet, ingredients: any[]) {
   weight.font = { color: { argb: "FFFFFFFF" } };
 
   ingredients.map((i) => {
-    sheet.addRow([i.name, "", "", i.percentage, i.unit, i.weight]);
+    sheet.addRow([i.name, "", "", i.percentage, "g", i.weight]);
 
     sheet.mergeCells(`A${sheet.lastRow?.number}:C${sheet.lastRow?.number}`);
   });

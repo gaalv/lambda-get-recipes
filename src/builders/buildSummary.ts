@@ -1,6 +1,7 @@
 import { Worksheet } from "exceljs";
+import { Recipe } from "../types";
 
-export function buildSummary(sheet: Worksheet, recipe: any) {
+export function buildSummary(sheet: Worksheet, recipe: Recipe) {
   const categoryCell = sheet.getCell("A2");
   categoryCell.value = "Categoria";
   categoryCell.font = { bold: true };
