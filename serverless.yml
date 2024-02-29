@@ -19,6 +19,8 @@ custom:
 functions:
   getRecipes:
     handler: src/index.handler
+    environment:
+      RECIPES_API_KEY: 789f0155-07f7-442e-baf5-acdf602b9890
     events:
       - httpApi:
           path: /recipes
